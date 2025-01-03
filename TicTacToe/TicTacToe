@@ -36,7 +36,7 @@ public class TicTacToe {
             boolean game = true;
 
             int[][] board = new int[3][3];
-            printBoard(board);                               // Add params later to display the inputs
+            printBoard(board);                               
 
             int turnCount = 1;
 
@@ -212,20 +212,30 @@ public class TicTacToe {
     }
 
     public static boolean askPlayAgain(Scanner console) {
+
+        boolean validInput = false;
+        boolean input = true;
+
         System.out.println();
-        System.out.print("Would you like to play again? (Yes/No): ");
-        String answer = console.next();
-        console.nextLine();
-        if (answer.equalsIgnoreCase("Yes")) {
-            System.out.println("Play again.");
-            return true;
-        } else if (answer.equalsIgnoreCase("No")) {
-            System.out.println("Game over.");
-            return false;
-        } else {
-            System.out.println("Not an answer bubtard.");
-            return false;
+        while (!validInput) {
+            System.out.print("Would you like to play again? (Yes/No): ");
+            String answer = console.next();
+            console.nextLine();                                                                // clears scanner token
+
+            if (answer.equalsIgnoreCase("Yes")) {
+                System.out.println("Play again.");
+                input = true;
+                validInput = true;
+            } else if (answer.equalsIgnoreCase("No")) {
+                System.out.println("Game over.");
+                input = false;
+                validInput = true;
+            } else {
+                System.out.println("Not an answer.");
+            }
         }
+
+        return input;
     }
 
     public static void displayResults(int p1Wins, int p2Wins, String p1, String p2) {
