@@ -90,10 +90,10 @@ public class TicTacToe {
                 inputArray = getInput(userInput);
             }
 
-            if (board[inputArray[1]][inputArray[0]] == 0 && turnCount % 2 == 1) {
+            if (board[inputArray[1]][inputArray[0]] == 0 && turnCount % 2 == 1) {                // checks for empty square, marks p1
                 board[inputArray[1]][inputArray[0]] = 1;
                 validInput = true;
-            } else if (board[inputArray[1]][inputArray[0]] == 0 && turnCount % 2 == 0) {
+            } else if (board[inputArray[1]][inputArray[0]] == 0 && turnCount % 2 == 0) {         // checks for empty square, marks p2
                 board[inputArray[1]][inputArray[0]] = 2;
                 validInput = true;
             } else {
