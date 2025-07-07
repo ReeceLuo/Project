@@ -1,1 +1,1 @@
-# My projects
+Play TicTacToe with your friends!
